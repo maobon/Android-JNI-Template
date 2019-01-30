@@ -44,6 +44,7 @@ Java_com_bob_jnilearn_JNIApi_toastInC(JNIEnv *env, jclass clazz, jobject context
 
     // Toast.makeText(this, "xxx", Toast.LENGTH_SHORT).show();
 
+    // C层反调Android直接Toast
     jclass targetClz = (*env)->FindClass(env, "android/widget/Toast");
     jmethodID makeTextMid = (*env)->GetStaticMethodID(env, targetClz, "makeText",
                                                       "(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;");
